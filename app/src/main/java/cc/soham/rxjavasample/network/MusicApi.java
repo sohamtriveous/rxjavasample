@@ -14,11 +14,6 @@ public class MusicApi {
     private static final String API_URL = "https://itunes.apple.com";
     private static MusicApiInterface sMusicApiInterface;
 
-    /**
-     * gets the Retrofit Music Api interface
-     *
-     * @return the API interface
-     */
     public static MusicApiInterface getApi() {
         if (sMusicApiInterface == null) {
             sMusicApiInterface = null;
@@ -31,10 +26,6 @@ public class MusicApi {
         return sMusicApiInterface;
     }
 
-
-    /**
-     * All the Farmily API calls, powered by Retrofit
-     */
     public interface MusicApiInterface {
         @GET("/search?entity=musicVideo")
         NetworkResponse getMusic(@Query("term") String term);
